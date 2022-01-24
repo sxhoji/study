@@ -1,3 +1,7 @@
+const category = 'toys';
+
+console.log(`https://someurl${category}/5`);
+
 let num = 51;
 
 switch (num) {
@@ -76,3 +80,28 @@ console.log(fruit.indexOf('t'));
 
 let smthng = 2.5;
 console.log(Math.round(smthng));
+
+function first() {
+  // do something
+  setTimeout(function () {
+    console.log(1);
+  }, 500);
+}
+
+function second() {
+  console.log(2);
+}
+
+first();
+second();
+
+function learn(lang, callback) {
+  console.log(`I learn ${lang}`);
+  callback();
+}
+
+function done() {
+  console.log('I learnt that lesson');
+}
+
+learn('JS', done);
