@@ -1,4 +1,4 @@
-const arr = [108, 20, 33, 61, 58];
+const arr = [5, 20, 33, 61, 58];
 arr.sort(compareNum);
 console.log(arr);
 
@@ -74,12 +74,68 @@ const numbers = {
 const newNumbers = double(numbers);
 
 newNumbers.a = 10;
-console.log(newNumbers);
-console.log(numbers);
+// console.log(newNumbers);
+// console.log(numbers);
 
 const add = {
   d: 17,
   e: 20,
 };
 
-console.log(Object.assign(numbers, add));
+const clone = Object.assign({}, add);
+clone.d = 20;
+
+// console.log(add);
+// console.log(clone);
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'ahahah';
+console.log(newArray);
+console.log(oldArray);
+
+const media = ['twitter', 'instagram', 'facebook'],
+  music = ['soundcloud', 'spotify', 'itunes'],
+  internet = [...media, ...music, 'vk', 'telegram'];
+
+console.log(internet);
+
+function log(a, b, c) {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+}
+
+let s = [2, 4, 6];
+
+log(...s);
+
+const q = {
+  one: 1,
+  two: 2,
+};
+const w = { ...q };
+console.log(w);
+
+let array = ['Vika', 'Sofa', 'Anya', 'Oleg'];
+// array.sort();
+// console.log(array);
+
+function getNameByLetter(letters, names) {
+  const newNames = [];
+
+  names.forEach((name) => {
+    const isIncludes = name
+      .toLocaleLowerCase()
+      .includes(letters.toLocaleLowerCase());
+
+    if (isIncludes) {
+      newNames.push(name);
+    }
+  });
+
+  return newNames;
+}
+
+console.log(getNameByLetter('o', array));
